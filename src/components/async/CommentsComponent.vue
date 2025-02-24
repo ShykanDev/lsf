@@ -2,6 +2,25 @@
   <section class="relative px-4 py-8 min-h-dvh">
     <h2 class="mb-4 text-3xl font-bold text-center text-rose-800">Comentarios</h2>
     <h3 class="mb-6 text-2xl text-center">Comparte tus experiencias y opiniones</h3>
+    <div class="p-6 mb-6 bg-gray-100 shadow-md rounded-2xl">
+      <div class="flex items-center justify-center mb-4 text-blue-600">
+        <i class="mr-2 text-3xl fas fa-balance-scale"></i>
+        <span class="text-xl font-semibold">El poder del karma positivo</span>
+      </div>
+      <p class="text-center text-gray-800">
+        Compartir tu experiencia no solo te ayuda a alzar la voz, sino que también protege a otros de caer en
+        situaciones similares.
+        Al revelar la verdad y exponer actos injustos, contribuyes a crear una comunidad más segura y consciente.
+        <span class="font-bold text-blue-700">El karma actúa cuando ayudamos a los demás:</span> al advertir a otros,
+        estás generando un impacto positivo que, de manera natural, regresará a ti de forma favorable.
+      </p>
+      <div class="flex justify-center mt-4 text-blue-600">
+        <i class="mr-4 text-3xl fas fa-hand-holding-heart"></i>
+        <i class="mr-4 text-3xl fas fa-shield-alt"></i>
+        <i class="text-3xl fas fa-heart"></i>
+      </div>
+    </div>
+
 
     <!-- Sección para mostrar comentarios existentes -->
     <div v-if="comments.length > 0" class="flex flex-wrap my-12 overflow-y-scroll pb-36 max-h-96 mb-44">
