@@ -1,27 +1,27 @@
 <template>
   <!-- Sticky Header -->
   <header ref="header"
-    :class="{ 'bg-rose-900 border-b-white': !pageScrolled, 'bg-orange-500 border-b-blue-600': pageScrolled }"
-    class="sticky top-0 z-50 text-white transition-all duration-700 ease-in-out border-b-2">
+    :class="{ 'bg-indigo-900 border-b-white': !pageScrolled, 'bg-orange-700 border-b-blue-600': pageScrolled }"
+    class="sticky top-0 z-50 text-white border-b-2 transition-all duration-700 ease-in-out">
     <div class="container px-4 mx-auto">
-      <nav class="flex items-center justify-between py-4 ">
+      <nav class="flex justify-between items-center py-4">
         <!-- Logo -->
         <div class="flex items-center mr-8 md:mr-0">
           <img src="https://www.sopletesorca.com/img/sslLogoV3.png" class="w-10 animate-shake" alt="">
           <RouterLink :to="{ name: 'home' }" class="ml-3 text-sm font-bold md:text-xl">
             <img src="../assets/img/icono-blanco.png" class="w-10 animate-shake" alt="">
-            <span>www.</span><span>los</span><span class="text-rose-300">estafadores</span><span>.com</span>
+            <span>www.</span><span>los</span><span class="text-indigo-300">estafadores</span><span>.com</span>
           </RouterLink>
         </div>
 
         <div class="hidden">
           <!-- search bar -->
-          <input :class="{ 'placeholder:text-orange-700': pageScrolled, 'placeholder:text-rose-800': !pageScrolled }"
+          <input :class="{ 'placeholder:text-orange-700': pageScrolled, 'placeholder:text-indigo-800': !pageScrolled }"
             type="text"
-            class="w-64 p-1 mr-3 text-black transition-all duration-300 ease-in-out bg-white outline-none rounded-3xl focus:w-72"
+            class="p-1 mr-3 w-64 text-black bg-white rounded-3xl transition-all duration-300 ease-in-out outline-none focus:w-72"
             placeholder="Comentario a buscar...">
           <button
-            :class="{ 'text-orange-600 bg-white p-1 rounded-lg': pageScrolled, 'text-rose-800 bg-white p-1 rounded-lg': !pageScrolled }"
+            :class="{ 'text-orange-600 bg-white p-1 rounded-lg': pageScrolled, 'text-indigo-800 bg-white p-1 rounded-lg': !pageScrolled }"
             class="transition-colors duration-300 ease-out"><i class="fas fa-search"></i>Buscar</button>
         </div>
         <!-- Navigation Links -->
@@ -57,13 +57,13 @@
   <main class="">
     <!-- cookies request -->
     <div v-if="!sysValues().getCookiesAccepted"
-      class="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between p-4 text-white border-t-2 border-white bg-sky-800">
+      class="flex fixed right-0 bottom-0 left-0 z-50 justify-between items-center p-4 text-white bg-sky-800 border-t-2 border-white">
       <div class="flex items-center">
         <i class="mr-2 text-xl fas fa-cookie"></i>
         <span>Este sitio web utiliza cookies para mejorar la experiencia del usuario.</span>
       </div>
       <button @click="sysValues().setCookiesAccepted(true)"
-        class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-600">
+        class="px-4 py-2 font-bold text-white bg-indigo-500 rounded hover:bg-indigo-600">
         Aceptar
       </button>
     </div>
@@ -71,7 +71,8 @@
   </main>
 
   <!-- Footer -->
-  <footer class="py-8 text-white bg-orange-500 border-t-2 border-white">
+  <footer class="py-8 text-white border-t-2 border-white"
+    :class="{ 'bg-indigo-500': !pageScrolled, 'bg-orange-500': pageScrolled }">
     <div class="container mx-auto">
       <div class="flex flex-wrap justify-between">
         <!-- Links Section -->

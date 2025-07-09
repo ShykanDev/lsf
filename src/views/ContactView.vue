@@ -6,7 +6,7 @@
           <!-- Encabezado -->
           <div class="mb-16 text-center">
             <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
-              <i class="mr-3 text-orange-600 fas fa-envelope-open-text"></i>Contáctanos
+              <i class="mr-3 text-indigo-600 fas fa-envelope-open-text"></i>Contáctanos
             </h2>
             <p class="mt-4 text-lg text-gray-600">¿Tiene alguna pregunta? Escríbenos y te responderemos en menos de 24
               horas</p>
@@ -18,7 +18,7 @@
               <!-- Teléfono -->
               <div class="flex items-start">
                 <div class="flex-shrink-0">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-600 rounded-full">
+                  <div class="flex justify-center items-center w-12 h-12 bg-indigo-600 rounded-full">
                     <i class="text-xl text-white fas fa-phone"></i>
                   </div>
                 </div>
@@ -32,7 +32,7 @@
               <!-- Email -->
               <div class="flex items-start">
                 <div class="flex-shrink-0">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-600 rounded-full">
+                  <div class="flex justify-center items-center w-12 h-12 bg-indigo-600 rounded-full">
                     <i class="text-xl text-white fas fa-envelope"></i>
                   </div>
                 </div>
@@ -46,7 +46,7 @@
               <!-- Dirección -->
               <div class="flex items-start">
                 <div class="flex-shrink-0">
-                  <div class="flex items-center justify-center w-12 h-12 bg-orange-600 rounded-full">
+                  <div class="flex justify-center items-center w-12 h-12 bg-indigo-600 rounded-full">
                     <i class="text-xl text-white fas fa-map-marker-alt"></i>
                   </div>
                 </div>
@@ -61,54 +61,54 @@
             </div>
 
             <!-- Formulario de Contacto -->
-            <div class="col-span-2 p-8 bg-white shadow-lg rounded-xl">
+            <div class="col-span-2 p-8 bg-white rounded-xl shadow-lg">
               <form class="space-y-6">
                 <div>
                   <label class="block text-sm font-medium text-gray-700">
-                    <i class="mr-2 text-orange-600 fas fa-user"></i>Nombre completo
+                    <i class="mr-2 text-indigo-600 fas fa-user"></i>Nombre completo
                   </label>
                   <input type="text" v-model="name"
-                    class="block w-full px-4 py-3 mt-1 border rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                    class="block px-4 py-3 mt-1 w-full rounded-lg border focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
                     required>
                 </div>
                 <div>
                   <label class="block text-sm font-medium text-gray-700">
-                    <i class="mr-2 text-orange-600 fas fa-tag"></i>Asunto
+                    <i class="mr-2 text-indigo-600 fas fa-tag"></i>Asunto
                   </label>
                   <input type="text" v-model="subject"
-                    class="block w-full px-4 py-3 mt-1 border rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                    class="block px-4 py-3 mt-1 w-full rounded-lg border focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
                     required>
                 </div>
 
                 <div>
                   <label class="block text-sm font-medium text-gray-700">
-                    <i class="mr-2 text-orange-600 fas fa-envelope"></i>Correo electrónico
+                    <i class="mr-2 text-indigo-600 fas fa-envelope"></i>Correo electrónico
                   </label>
                   <input type="email" v-model="email"
-                    class="block w-full px-4 py-3 mt-1 border rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                    class="block px-4 py-3 mt-1 w-full rounded-lg border focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
                     required>
                 </div>
 
                 <div>
                   <label class="block text-sm font-medium text-gray-700">
-                    <i class="mr-2 text-orange-600 fas fa-phone"></i>Teléfono (opcional)
+                    <i class="mr-2 text-indigo-600 fas fa-phone"></i>Teléfono (opcional)
 
                   </label>
                   <input type="tel" v-model="phone"
-                    class="block w-full px-4 py-3 mt-1 border rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent">
+                    class="block px-4 py-3 mt-1 w-full rounded-lg border focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
                 </div>
 
                 <div>
                   <label class="block text-sm font-medium text-gray-700">
-                    <i class="mr-2 text-orange-600 fas fa-comment-dots"></i>Mensaje
+                    <i class="mr-2 text-indigo-600 fas fa-comment-dots"></i>Mensaje
                   </label>
                   <textarea v-model="message" rows="4"
-                    class="block w-full px-4 py-3 mt-1 border rounded-lg focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+                    class="block px-4 py-3 mt-1 w-full rounded-lg border focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
                     required></textarea>
                 </div>
 
                 <button @click.prevent="sendEmail" type="submit"
-                  class="w-full px-4 py-3 font-semibold text-white transition-colors duration-300 bg-orange-600 rounded-lg hover:bg-orange-700">
+                  class="px-4 py-3 w-full font-semibold text-white bg-indigo-600 rounded-lg transition-colors duration-300 hover:bg-indigo-700">
                   <i class="mr-2 fas fa-paper-plane"></i>Enviar Mensaje
                 </button>
               </form>

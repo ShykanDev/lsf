@@ -3,13 +3,13 @@
   <div class="mx-auto max-w-7xl">
     <!-- Encabezado -->
     <div class="mb-12 text-center">
-      <h2 class="mb-4 text-3xl font-bold text-rose-900 font-poppins md:text-4xl">
+      <h2 class="mb-4 text-3xl font-bold text-gray-900 font-poppins md:text-4xl">
         Historia de los Estafadores
       </h2>
       <h3 class="mb-6 text-xl text-gray-600 md:text-2xl">
         Un recorrido por el origen y evolución de las estafas a lo largo del tiempo
       </h3>
-      <div class="max-w-3xl mx-auto prose-lg">
+      <div class="mx-auto max-w-3xl prose-lg">
         <p class="leading-relaxed text-gray-700">
           Desde los albores de la civilización, los estafadores han sido una constante en la historia de la humanidad. Su capacidad para adaptarse a los cambios sociales, económicos y tecnológicos los ha convertido en una amenaza persistente.
         </p>
@@ -20,9 +20,9 @@
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
       <!-- Card 1: Origen -->
-      <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+      <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
         <div class="flex flex-col h-full">
-          <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+          <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
             <img src="../../assets/img/papiro.jpg" alt="Papiro egipcio antiguo" class="object-cover w-full h-full rounded-lg">
           </div>
           <div class="flex-grow">
@@ -38,9 +38,9 @@
       </div>
 
       <!-- Card 2: Evolución -->
-      <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+      <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
         <div class="flex flex-col h-full">
-          <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+          <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
             <img src="../../assets/img/gold.jpg" alt="Evolución tecnológica de estafas" class="object-cover w-full h-full rounded-lg">
           </div>
           <div class="flex-grow">
@@ -56,9 +56,9 @@
       </div>
 
       <!-- Card 3: Impacto Social -->
-      <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+      <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
         <div class="flex flex-col h-full">
-          <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+          <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
             <img src="../../assets/img/dating.jpg" alt="Impacto en relaciones sociales" class="object-cover w-full h-full rounded-lg">
           </div>
           <div class="flex-grow">
@@ -74,9 +74,9 @@
       </div>
 
       <!-- Card 4: Impacto Económico -->
-      <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+      <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
         <div class="flex flex-col h-full">
-          <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+          <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
             <img src="../../assets/img/moneyLost.jpg" alt="Gráficos-economicos afectados" class="object-cover w-full h-full rounded-lg">
           </div>
           <div class="flex-grow">
@@ -92,9 +92,9 @@
       </div>
 
       <!-- Card 5: Era Digital -->
-      <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+      <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
         <div class="flex flex-col h-full">
-          <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+          <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
             <img src="../../assets/img/digitaVirus.jpg" alt="Tecnología y ciberamenazas" class="object-cover w-full h-full rounded-lg">
           </div>
           <div class="flex-grow">
@@ -110,9 +110,9 @@
       </div>
 
       <!-- Card 6: Conclusión -->
-      <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+      <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
         <div class="flex flex-col h-full">
-          <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+          <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
             <img src="../../assets/img/study.jpg" alt="Prevención y concienciación" class="object-cover w-full h-full rounded-lg">
           </div>
           <div class="flex-grow">
@@ -128,9 +128,9 @@
       </div>
 
       <!-- Card 7: Estafas Románticas -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/datingV2.jpg" alt="Estafas románticas en línea" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -146,9 +146,9 @@
   </div>
 
   <!-- Card 8: Fraudes Corporativos -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/scam.jpg" alt="Fraudes en empresas" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -164,9 +164,9 @@
   </div>
 
   <!-- Card 9: Estafas a Ancianos -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/elder.jpg" alt="Protección a adultos mayores" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -182,9 +182,9 @@
   </div>
 
   <!-- Card 10: Criptoestafas -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/money_bitcoin.jpg" alt="Estafas con criptomonedas" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -200,9 +200,9 @@
   </div>
 
   <!-- Card 11: Deepfakes -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/aideep.jpg" alt="Tecnología deepfake" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -218,10 +218,10 @@
   </div>
 
   <!-- Card 12: Prevención -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
-        <img src="" alt="Medidas de prevención" class="object-cover w-full h-full rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
+        <img src="../../assets/img/talking.png" alt="Medidas de prevención" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
         <div class="flex items-center mb-4">
@@ -235,9 +235,9 @@
     </div>
   </div>
   <!-- Card 13: Estafas en Redes Sociales -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/fakeSocialMedia.jpg" alt="Estafas en redes sociales" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -253,9 +253,9 @@
   </div>
 
   <!-- Card 14: Estafas de Inversión -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/invest.jpg" alt="Fraudes de inversión" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -271,9 +271,9 @@
   </div>
 
   <!-- Card 15: Estafas de Soporte Técnico -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/fakeSupport.jpg" alt="Soporte técnico falso" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -289,9 +289,9 @@
   </div>
 
   <!-- Card 16: Estafas de Phishing -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/phishing.jpg" alt="Correos de phishing" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -307,9 +307,9 @@
   </div>
 
   <!-- Card 17: Estafas de Trabajo desde Casa -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/fakeJobs.jpg" alt="Ofertas de trabajo falsas" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">
@@ -325,9 +325,9 @@
   </div>
 
   <!-- Card 18: Estafas de Premios y Loterías -->
-  <div class="p-6 transition-shadow bg-white rounded-lg shadow-lg hover:shadow-xl">
+  <div class="p-6 bg-white rounded-lg shadow-lg transition-shadow hover:shadow-xl">
     <div class="flex flex-col h-full">
-      <div class="w-full h-48 mb-4 bg-gray-200 rounded-lg">
+      <div class="mb-4 w-full h-48 bg-gray-200 rounded-lg">
         <img src="../../assets/img/prizes.jpg" alt="Premios falsos" class="object-cover w-full h-full rounded-lg">
       </div>
       <div class="flex-grow">

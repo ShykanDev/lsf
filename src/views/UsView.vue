@@ -5,10 +5,10 @@
 
       <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <!-- Sección Sobre nosotros -->
-        <div class="flex flex-col items-center gap-8 mb-16 md:flex-row">
+        <div class="flex flex-col gap-8 items-center mb-16 md:flex-row">
           <div class="md:w-7/12">
             <h2 class="mb-6 text-3xl font-bold text-center text-gray-800 md:text-left">
-              <i class="mr-2 text-orange-500 fas fa-info-circle"></i>Sobre losestafadores.com
+              <i class="mr-2 text-indigo-500 fas fa-info-circle"></i>Sobre losestafadores.com
             </h2>
             <p class="text-lg leading-relaxed text-gray-600">
               Los estafadores.com es un sitio con registro gratuito, donde podrá descubrir a base de experiencias, las
@@ -31,19 +31,19 @@
             <div class="lg:w-4/5">
               <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div class="p-6 text-center bg-white rounded-lg shadow-sm">
-                  <i class="mb-4 text-4xl text-orange-500 fas fa-comment-dots"></i>
+                  <i class="mb-4 text-4xl text-indigo-500 fas fa-comment-dots"></i>
                   <h3 class="mb-3 text-xl font-semibold">Comenta</h3>
                   <p class="text-gray-600">Comparte tus comentarios mencionando con base a experiencias situaciones con
                     estafas o fraudes.</p>
                 </div>
                 <div class="p-6 text-center bg-white rounded-lg shadow-sm">
-                  <i class="mb-4 text-4xl text-orange-500 fas fa-search"></i>
+                  <i class="mb-4 text-4xl text-indigo-500 fas fa-search"></i>
                   <h3 class="mb-3 text-xl font-semibold">Indaga</h3>
                   <p class="text-gray-600">Busca y conoce gracias a los comentarios, las personas que realizan estafas y
                     fraudes.</p>
                 </div>
                 <div class="p-6 text-center bg-white rounded-lg shadow-sm">
-                  <i class="mb-4 text-4xl text-orange-500 fas fa-eye"></i>
+                  <i class="mb-4 text-4xl text-indigo-500 fas fa-eye"></i>
                   <h3 class="mb-3 text-xl font-semibold">Descubre</h3>
                   <p class="text-gray-600">Antes de realizar una compra, contrato, préstamo, negocio y más. Descubre
                     quienes son los estafadores.</p>
@@ -56,7 +56,7 @@
         <div class="my-12 border-b-2 border-gray-200"></div>
 
         <!-- Franja naranja -->
-        <div class="p-8 mb-16 bg-orange-500 rounded-xl">
+        <div class="p-8 mb-16 bg-indigo-500 rounded-xl">
           <div class="grid grid-cols-1 gap-8 text-white md:grid-cols-4">
             <div class="text-center">
               <i class="mb-4 text-3xl fas fa-wallet"></i>
@@ -76,7 +76,7 @@
             <div class="text-center">
               <i class="mb-4 text-3xl fas fa-check-circle"></i>
               <p class="mb-2 text-lg font-bold">Confiable</p>
-              <p class="text-sm">Contamos con <a href="./privacidad.php" class="underline hover:text-orange-200">Avisos
+              <p class="text-sm">Contamos con <a href="./privacidad.php" class="underline hover:text-indigo-200">Avisos
                   de Privacidad</a></p>
             </div>
           </div>
@@ -86,32 +86,32 @@
 
         <!-- Bloques finales -->
         <div class="space-y-8">
-          <div class="p-8 text-center text-white bg-orange-500 rounded-xl">
+          <div class="p-8 text-center text-white bg-indigo-500 rounded-xl">
             <h2 class="mb-4 text-2xl font-bold">Comente sus experiencias</h2>
             <p class="mb-6">¿Ha sido directamente o indirectamente víctima de una estafa o fraude? Publique y comente
               acerca de esa experiencia.</p>
             <RouterLink :to="{ name: 'blog' }"
-              class="inline-block px-6 py-3 text-white transition-colors bg-gray-800 rounded-lg hover:bg-gray-700">
+              class="inline-block px-6 py-3 text-white bg-gray-800 rounded-lg transition-colors hover:bg-gray-700">
               Comentar <i class="ml-2 fas fa-arrow-right"></i>
             </RouterLink>
           </div>
 
           <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <div class="p-8 text-center text-white bg-orange-400 rounded-xl">
+            <div class="p-8 text-center text-white bg-indigo-400 rounded-xl">
               <h2 class="mb-4 text-2xl font-bold">Indague quienes son los estafadores</h2>
-              <p class="mb-6"><a href="#miModal" class="underline hover:text-orange-200">Iniciar Sesión</a> para
+              <p class="mb-6"><a href="#miModal" class="underline hover:text-indigo-200">Iniciar Sesión</a> para
                 habilitar todas las funciones.</p>
               <RouterLink :to="{ name: 'blog' }"
-                class="inline-block px-6 py-3 text-white transition-colors bg-gray-800 rounded-lg hover:bg-gray-700">
+                class="inline-block px-6 py-3 text-white bg-gray-800 rounded-lg transition-colors hover:bg-gray-700">
                 Blog <i class="ml-2 fas fa-book-open"></i>
               </RouterLink>
             </div>
 
-            <div class="p-8 text-center text-white bg-orange-300 rounded-xl">
+            <div class="p-8 text-center text-white bg-indigo-300 rounded-xl">
               <h2 class="mb-4 text-2xl font-bold">Comparta sus experiencias</h2>
               <p class="mb-6">Publica y comparte tus experiencias con otros usuarios.</p>
               <RouterLink :to="{ name: 'blog' }"
-                class="inline-block px-6 py-3 text-white transition-colors bg-gray-800 rounded-lg hover:bg-gray-700">
+                class="inline-block px-6 py-3 text-white bg-gray-800 rounded-lg transition-colors hover:bg-gray-700">
                 Comentar <i class="ml-2 fas fa-users"></i>
               </RouterLink>
             </div>
@@ -122,7 +122,7 @@
 
         <!-- Sección "Evita problemas" -->
         <div class="p-8 mb-16 bg-gray-100 rounded-xl">
-          <div class="flex flex-col items-center gap-8 md:flex-row">
+          <div class="flex flex-col gap-8 items-center md:flex-row">
             <div class="flex justify-center md:w-1/2">
               <img src="../assets/img/ciculo-woman.png" alt="Mujer" class="object-contain w-64 h-64">
             </div>
@@ -134,7 +134,7 @@
               </p>
               <div class="text-center">
                 <RouterLink :to="{ name: 'blog' }"
-                  class="inline-block px-6 py-3 text-white transition-colors bg-gray-800 rounded-lg hover:bg-gray-700">
+                  class="inline-block px-6 py-3 text-white bg-gray-800 rounded-lg transition-colors hover:bg-gray-700">
                   Blog <i class="ml-2 fas fa-book-open"></i>
                 </RouterLink>
               </div>

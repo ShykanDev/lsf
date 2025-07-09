@@ -1,7 +1,7 @@
 <template>
   <!-- Comentario -->
   <div class="p-4 mb-4 bg-white rounded-lg shadow-md">
-    <div class="flex items-center justify-between mb-2">
+    <div class="flex justify-between items-center mb-2">
       <div class="flex items-center">
         <i class="text-2xl text-blue-500 fas fa-user-circle" aria-hidden="true"></i>
         <div class="ml-2">
@@ -9,13 +9,13 @@
           <p class="text-sm text-gray-500">{{ formattedDate }}</p>
         </div>
       </div>
-      <div class="items-center hidden space-x-2 ">
+      <div class="hidden items-center space-x-2">
         <i class="text-gray-500 cursor-pointer fas fa-thumbs-up hover:text-blue-500"></i>
         <i class="text-gray-500 cursor-pointer fas fa-thumbs-down hover:text-red-500"></i>
         <i class="text-gray-500 cursor-pointer fas fa-share-alt hover:text-green-500"></i>
       </div>
     </div>
-    <h3 class="mb-2 text-xl font-bold">{{ props.subject }}</h3>
+    <h3 class="mb-2 text-xl italic font-medium text-blue-800">"{{ props.subject }}"</h3>
     <p class="text-base leading-relaxed">
       {{ props.msg }}
     </p>
@@ -54,6 +54,7 @@ const formattedDate = computed(() => {
   // Si no es un objeto Timestamp válido, devuelve un mensaje de error
   return 'Invalid Date';
 });
+
 </script>
 
 <style scoped></style>

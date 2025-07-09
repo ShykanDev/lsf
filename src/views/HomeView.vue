@@ -4,7 +4,7 @@
       <!-- main page -->
       <section>
         <!-- Site Header -->
-        <div id="mainSectionHeader" class="text-white bg-gradient-to-br from-rose-500 to-orange-800 animate-fade">
+        <div id="mainSectionHeader" class="text-white bg-gradient-to-br from-blue-500 to-blue-800 animate-fade">
           <div class="container px-4 py-10 mx-auto">
             <div class="flex items-start">
               <div class="w-full md:w-1/2 lg:pr-20">
@@ -18,17 +18,17 @@
                 </p>
                 <div class="flex gap-4 mb-12">
                   <RouterLink :to="{ name: 'home' }"
-                    class="px-8 py-3 transition-all rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 animate-fade-up animate-delay-500">
+                    class="px-8 py-3 rounded-full border-2 border-white backdrop-blur-sm transition-all bg-white/10 hover:bg-white/20 animate-fade-up animate-delay-500">
                     <i class="mr-2 fas fa-door-open"></i>Acceder
                   </RouterLink>
                   <RouterLink :to="{ name: 'blog' }"
-                    class="px-8 py-3 transition-all border-2 rounded-full border-white/30 hover:bg-white/10 animate-fade-up animate-delay-1000">
+                    class="px-8 py-3 rounded-full border-2 transition-all border-white/30 hover:bg-white/10 animate-fade-up animate-delay-1000">
                     <i class="mr-2 fas fa-search-dollar"></i>Información
                   </RouterLink>
                 </div>
 
-                <div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm ">
-                  <div class="flex items-center gap-4">
+                <div class="p-6 rounded-xl backdrop-blur-sm bg-white/5">
+                  <div class="flex gap-4 items-center">
                     <div class="flex-1">
                       <h3 class="mb-2 font-bold"><i class="mr-2 fas fa-hand-holding-usd"></i>Protección Financiera</h3>
                       <p class="text-sm opacity-80">Verificación comunitaria de operaciones comerciales</p>
@@ -36,7 +36,7 @@
                   </div>
                 </div>
               </div>
-              <div class="flex-1 bg-zinc-700 rounded-3xl">
+              <div class="flex-1 rounded-3xl bg-zinc-700">
                 <img class="rounded-3xl"
                   src="https://images.pexels.com/photos/6353683/pexels-photo-6353683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt="">
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Franja Amarilla -->
-        <div class="mx-4 mt-4 bg-gradient-to-l from-orange-500 to-orange-600 rounded-3xl">
+        <div class="mx-4 mt-4 bg-gradient-to-l from-blue-500 to-blue-600 rounded-3xl">
           <div class="container flex items-end py-8 mx-auto space-x-7">
             <div class="w-7/10">
               <h2 class="text-2xl font-bold text-white"><span>¡Registro gratuito!</span></h2>
@@ -54,7 +54,7 @@
                 experiencias de estafa/fraude que han tenido los demás usuarios.</p>
             </div>
             <RouterLink :to="{ name: 'register' }"
-              class="px-6 py-2 text-white bg-orange-500 border-2 border-white rounded-lg shadow">
+              class="px-6 py-2 text-white bg-indigo-500 rounded-lg border-2 border-white shadow">
               <i class="fas fa-user-plus"></i> Registrarse
             </RouterLink>
           </div>
@@ -62,10 +62,10 @@
 
         <!-- Bolas Azules -->
         <div class="flex justify-center">
-          <div class="my-8 border-b border-gray-300 "></div>
-          <div class="container ">
-            <div class="flex p-2 py-6 mt-4 bg-sky-800 rounded-xl">
-              <div class="flex flex-col items-center w-1/2 gap-2">
+          <div class="my-8 border-b border-gray-300"></div>
+          <div class="container">
+            <div class="flex p-2 py-6 mt-4 bg-rose-700 rounded-xl">
+              <div class="flex flex-col gap-2 items-center w-1/2">
                 <h2 class="text-2xl font-bold text-white">¿Qué es losestafadores.com?</h2>
                 <p class="text-white">Es un sitio web, de registro gratuito, el cual almacena las experiencias de
                   terceros con temas de fraude y estafas. Los comentarios son para ayudar a evitar estas malas prácticas
@@ -77,18 +77,18 @@
               <div class="w-1/2">
                 <div class="p-4 rounded-lg shadow bg-slate-400">
                   <div class="flex">
-                    <div class="w-1/2 p-2 m-2 text-center rounded-lg bg-sky-800">
+                    <div class="p-2 m-2 w-1/2 text-center bg-sky-800 rounded-lg">
                       <p class="font-bold text-white"><i class="mr-2 fas fa-hand-holding-usd"></i> SIN COSTO</p>
                     </div>
-                    <div class="w-1/2 p-2 m-2 text-center rounded-lg bg-sky-800">
+                    <div class="p-2 m-2 w-1/2 text-center bg-sky-800 rounded-lg">
                       <p class="font-bold text-white"><i class="mr-2 fas fa-bolt"></i>FÁCIL Y RÁPIDO</p>
                     </div>
                   </div>
                   <div class="flex">
-                    <div class="w-1/2 p-2 m-2 text-center rounded-lg bg-sky-800">
+                    <div class="p-2 m-2 w-1/2 text-center bg-sky-800 rounded-lg">
                       <p class="font-bold text-white"><i class="mr-2 fas fa-search"></i>BÚSQUEDA AVANZADA</p>
                     </div>
-                    <div class="w-1/2 p-2 m-2 text-center rounded-lg bg-sky-800">
+                    <div class="p-2 m-2 w-1/2 text-center bg-sky-800 rounded-lg">
                       <p class="font-bold text-white"><i class="mr-2 fas fa-lock"></i>SEGURO</p>
                     </div>
                   </div>
@@ -115,41 +115,41 @@
           <div class="text-center">
             <strong>
               <RouterLink :to="{ name: 'home' }">
-                <RouterLink :to="{ name: 'login' }" class="font-semibold underline text-sky-500">Inicie Sesión
+                <RouterLink :to="{ name: 'login' }" class="font-semibold text-sky-500 underline">Inicie Sesión
                 </RouterLink>
               </RouterLink> para desbloquear las siguientes acciones
             </strong>
             <div class="flex flex-col items-center mt-8 space-y-5 md:flex-row md:flex">
-              <div class="flex flex-col items-center w-1/4 space-y-5">
+              <div class="flex flex-col items-center space-y-5 w-1/4">
                 <h2 class="text-xl font-bold text-gray-800">¿Desea escribir un comentario?</h2>
                 <i class="text-5xl text-sky-600 fas fa-comment-dots"></i>
                 <br>
-                <RouterLink :to="{ name: 'blog' }" class="px-6 py-2 mt-4 text-white rounded-lg shadow bg-sky-800">
+                <RouterLink :to="{ name: 'blog' }" class="px-6 py-2 mt-4 text-white bg-sky-800 rounded-lg shadow">
                   <i class="fas fa-edit"></i> Comentar
                 </RouterLink>
               </div>
-              <div class="flex flex-col items-center w-1/4 space-y-5">
+              <div class="flex flex-col items-center space-y-5 w-1/4">
                 <h2 class="text-xl font-bold text-gray-800">Revise los comentarios</h2>
                 <i class="text-5xl text-sky-900 fas fa-comments"></i>
                 <br>
-                <RouterLink :to="{ name: 'blog' }" class="px-6 py-2 mt-4 text-white rounded-lg shadow bg-sky-800">
+                <RouterLink :to="{ name: 'blog' }" class="px-6 py-2 mt-4 text-white bg-sky-800 rounded-lg shadow">
                   <i class="fas fa-book-open"></i> Blog
                 </RouterLink>
               </div>
-              <div class="flex flex-col items-center w-1/4 space-y-5">
+              <div class="flex flex-col items-center space-y-5 w-1/4">
                 <h2 class="text-xl font-bold text-gray-800">Filtro de búsqueda avanzado</h2>
                 <i class="text-5xl text-orange-600 fas fa-search"></i>
                 <br>
                 <RouterLink :to="{ name: 'blog' }"
-                  class="hidden px-6 py-2 mt-4 text-white rounded-lg shadow bg-sky-800">
+                  class="hidden px-6 py-2 mt-4 text-white bg-sky-800 rounded-lg shadow">
                   <i class="fas fa-search"></i> Buscar
                 </RouterLink>
               </div>
-              <div class="flex flex-col items-center w-1/4 space-y-5">
+              <div class="flex flex-col items-center space-y-5 w-1/4">
                 <h2 class="text-xl font-bold text-gray-800">¿Tiene dudas o requiere de ayuda?</h2>
                 <i class="text-5xl text-gray-600 fas fa-question-circle"></i>
                 <br>
-                <RouterLink :to="{ name: 'ayuda' }" class="px-6 py-2 mt-4 text-white rounded-lg shadow bg-sky-800">
+                <RouterLink :to="{ name: 'ayuda' }" class="px-6 py-2 mt-4 text-white bg-sky-800 rounded-lg shadow">
                   <i class="fas fa-life-ring"></i> Ayuda
                 </RouterLink>
               </div>
@@ -188,7 +188,7 @@
 
         <!-- Próximamente -->
         <div class="my-8 border-b border-gray-300"></div>
-        <div class="container flex items-center justify-center w-full mx-auto ">
+        <div class="container flex justify-center items-center mx-auto w-full">
           <div class="w-2/5">
             <h2 class="text-2xl font-bold text-sky-700">Los comentarios que aportas y lees son valiosos</h2>
             <p class="text-gray-600">Al tener una recopilación se puede detectar a los estafadores y podrá actuar
@@ -219,7 +219,7 @@
               <section class="py-20 bg-gray-50 rounded-xl">
                 <div class="container px-4 mx-auto">
                   <!-- Título y Descripción -->
-                  <div class="max-w-2xl mx-auto mb-16 text-center">
+                  <div class="mx-auto mb-16 max-w-2xl text-center">
                     <h2 class="mb-6 text-4xl font-bold">
                       <i class="mr-3 text-yellow-500 fas fa-exclamation-triangle"></i>
                       Diferentes tipos de Estafas y Fraudes
@@ -235,8 +235,8 @@
                   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     <!-- Tarjeta Hipotecario -->
                     <div
-                      class="overflow-hidden transition-shadow bg-white border border-orange-400 shadow-lg rounded-2xl hover:shadow-xl">
-                      <div class="flex items-center justify-center h-48 bg-gray-200">
+                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/mortgage.jpg" alt="Hipotecario" class="object-cover w-full h-full">
                       </div>
                       <div class="p-6">
@@ -254,8 +254,8 @@
 
                     <!-- Tarjeta Compras por Internet -->
                     <div
-                      class="overflow-hidden transition-shadow bg-white border border-orange-400 shadow-lg rounded-2xl hover:shadow-xl">
-                      <div class="flex items-center justify-center h-48 bg-gray-200">
+                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/internet_shopping.jpg" alt="Compras por Internet"
                           class="object-cover w-full h-full">
                       </div>
@@ -274,8 +274,8 @@
 
                     <!-- Tarjeta Servicios -->
                     <div
-                      class="overflow-hidden transition-shadow bg-white border border-orange-400 shadow-lg rounded-2xl hover:shadow-xl">
-                      <div class="flex items-center justify-center h-48 bg-gray-200">
+                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/fake_ads.jpg" alt="Servicios" class="object-cover w-full h-full">
                       </div>
                       <div class="p-6">
@@ -294,8 +294,8 @@
 
                     <!-- Tarjeta Productos -->
                     <div
-                      class="overflow-hidden transition-shadow bg-white border border-orange-400 shadow-lg rounded-2xl hover:shadow-xl">
-                      <div class="flex items-center justify-center h-48 bg-gray-200">
+                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/products.jpg" alt="Productos" class="object-cover w-full h-full">
                       </div>
                       <div class="p-6">
@@ -315,8 +315,8 @@
 
                     <!-- Tarjeta Bancarios o Prestamistas -->
                     <div
-                      class="overflow-hidden transition-shadow bg-white border border-orange-400 shadow-lg rounded-2xl hover:shadow-xl">
-                      <div class="flex items-center justify-center h-48 bg-gray-200">
+                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/banking.jpg" alt="Bancarios o Prestamistas"
                           class="object-cover w-full h-full">
                       </div>
@@ -336,8 +336,8 @@
 
                     <!-- Tarjeta Trabajos -->
                     <div
-                      class="pb-4 overflow-hidden transition-shadow bg-white border border-orange-400 shadow-lg rounded-2xl hover:shadow-xl">
-                      <div class="flex items-center justify-center h-48 bg-gray-200">
+                      class="overflow-hidden pb-4 bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/working.jpg" alt="Trabajos" class="object-cover w-full h-full">
                       </div>
                       <div class="p-6">
@@ -384,7 +384,7 @@
     <!--
       <div class="text-white bg-gradient-to-br from-blue-600 to-purple-700">
         <div class="container px-4 py-20 mx-auto">
-            <div class="flex items-center ">
+            <div class="flex items-center">
                 <div class="w-full md:w-1/2 lg:pr-20">
                     <h1 class="mb-6 text-4xl font-bold leading-tight md:text-6xl">
                         <i class="mr-4 fas fa-shield-alt"></i>Protega sus transacciones digitales
@@ -394,18 +394,18 @@
                     <div class="flex gap-4 mb-12">
                         <RouterLink
                             :to="{name:'home'}"
-                            class="px-8 py-3 transition-all rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20">
+                            class="px-8 py-3 rounded-full backdrop-blur-sm transition-all bg-white/10 hover:bg-white/20">
                             <i class="mr-2 fas fa-door-open"></i>Acceder
                         </RouterLink>
                         <RouterLink
                             :to="{name:'about'}"
-                            class="px-8 py-3 transition-all border-2 rounded-full border-white/30 hover:bg-white/10">
+                            class="px-8 py-3 rounded-full border-2 transition-all border-white/30 hover:bg-white/10">
                             <i class="mr-2 fas fa-search-dollar"></i>Investigaciones
                         </RouterLink>
                     </div>
 
-                    <div class="p-6 bg-white/5 rounded-xl backdrop-blur-sm bg-sky-400">
-                        <div class="flex items-center gap-4">
+                    <div class="p-6 bg-sky-400 rounded-xl backdrop-blur-sm bg-white/5">
+                        <div class="flex gap-4 items-center">
                             <div class="flex-1">
                                 <h3 class="mb-2 font-bold"><i class="mr-2 fas fa-hand-holding-usd"></i>Protección Financiera</h3>
                                 <p class="text-sm opacity-80">Verificación comunitaria de operaciones comerciales</p>
@@ -416,7 +416,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex-1 bg-zinc-700 rounded-3xl">
+                <div class="flex-1 rounded-3xl bg-zinc-700">
                   <img class="rounded-3xl" src="https://images.pexels.com/photos/6353683/pexels-photo-6353683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
                 </div>
             </div>
