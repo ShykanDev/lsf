@@ -79,6 +79,14 @@ const router = createRouter({
         requiresAuth: false,
       },
     },
+    {
+      path: '/succesfullyRegistered',
+      name: 'succesfullyRegistered',
+      component: () => import('../views/SuccesfullyRegistered.vue'),
+      meta: {
+        requiresAuth: false,
+      },
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }

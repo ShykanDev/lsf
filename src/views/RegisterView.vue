@@ -120,6 +120,7 @@ const verifyValues = (): boolean => (!userEmail.value || !password.value || !con
 
 // values to login the user trough firebase
 const auth = getAuth();
+
 const router = useRouter();
 const createUser = async (): Promise<any> => {
   if (!verifyValues()) {
@@ -132,8 +133,14 @@ const createUser = async (): Promise<any> => {
     updateProfile(credentials.user, {
       displayName: userName.value,
     })
-    await sendEmailVerification(credentials.user);
+
+
     if (credentials.user) {
+      const actionCodeSettings = {
+        url: 'https://losestafadores.com/succesfullyRegistered',
+        handleCodeInApp: true,
+      };
+      await sendEmailVerification(credentials.user, actionCodeSettings);
       console.log(credentials.user);
     }
     sysValues().setUserName(userName.value)

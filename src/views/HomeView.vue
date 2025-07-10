@@ -174,7 +174,7 @@
               </div>
               <div class="w-1/2">
                 <h2 class="text-2xl font-bold text-blue-500">Comente sus experiencias</h2>
-                <p class="text-gray-600">Comparta y atribuya con sus comentarios, contándonos su experiencia sobre
+                <p class="text-gray-600">Comparta y atribauya con sus comentarios, contándonos su experiencia sobre
                   alguna estafa o fraude que haya vivido</p>
                 <div class="mt-4 text-center">
                   <RouterLink :to="{ name: 'blog' }" class="px-6 py-2 text-white bg-blue-500 rounded-lg shadow">
