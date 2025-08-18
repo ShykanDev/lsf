@@ -22,4 +22,5 @@ export const sysValues = defineStore('sysVals', {
       this.userName = value
     },
   },
+  persist:true
 })

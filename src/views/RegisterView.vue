@@ -1,14 +1,14 @@
 <template>
   <MainLayout>
     <template #main>
-      <section class="px-4 py-5 min-h-screen bg-gradient-to-br from-indigo-600 to-indigo-800">
-        <div class="overflow-hidden mx-auto max-w-full bg-white rounded-xl shadow-2xl">
+      <section class="relative z-10 px-4 py-5 min-h-screen">
+        <img src="https://images.pexels.com/photos/221179/pexels-photo-221179.jpeg" alt="" class="object-cover absolute top-0 left-0 w-full h-full -z-10">
+        <div class="overflow-hidden z-10 mx-auto max-w-full rounded-xl shadow-2xl bg-indigo-50/95">
           <div class="p-8">
             <!-- Encabezado -->
             <div class="mb-10 text-center">
               <i class="mb-4 text-4xl text-indigo-600 fas fa-user-plus"></i>
               <h2 class="text-3xl font-bold text-gray-800">Cree su cuenta</h2>
-              <p class="mt-2 text-gray-600">Únase para comentar y proteger a la comunidad</p>
             </div>
 
             <!-- Formulario -->
@@ -21,6 +21,33 @@
                 <input type="text" v-model="userName" name="name"
                   class="px-4 py-3 w-full rounded-lg border focus:ring-2 focus:ring-indigo-600 focus:border-transparent"
                   placeholder="Ej: Juan Pérez" required>
+              </div>
+
+              <!--Avatar Color Picker-->
+              <div>
+                <label class="block mb-2 text-sm font-semibold text-gray-700">
+                  <i class="mr-2 text-indigo-600 fas fa-user"></i>Color de avatar
+                </label>
+                <div class="flex gap-2">
+                  <article
+                    v-for="item in avatarColors"
+                    :key="item.id"
+                    @click="selectColor(item.color)"
+                    class="flex justify-center items-center w-8 h-8 rounded-full transition-all duration-200 cursor-pointer"
+                    :style="{
+                      backgroundColor: !selectedColor ? item.color : (selectedColor === item.color ? item.color : '#e5e7eb'),
+                      border: `2px solid ${!selectedColor ? item.color : (selectedColor === item.color ? item.color : '#d1d5db')}`,
+                      transform: selectedColor === item.color ? 'scale(1.1)' : 'scale(1)'
+                    }"
+                  >
+                    <span
+                      class="text-sm font-semibold"
+                      :style="{ color: !selectedColor ? '#ffffff' : (selectedColor === item.color ? '#ffffff' : '#6b7280') }"
+                    >
+                      {{ userName.charAt(0).toUpperCase() }}
+                    </span>
+                  </article>
+                </div>
               </div>
 
               <!-- Correo -->
@@ -71,10 +98,10 @@
 
               <!-- Enlace Login -->
               <p class="mt-6 text-center text-gray-600">
-                ¿Ya tienes cuenta?
-                <a href="#login" class="font-semibold text-indigo-600 hover:text-indigo-800">
-                  Inicia Sesión <i class="ml-1 fas fa-sign-in-alt"></i>
-                </a>
+                ¿Ya tiene cuenta?
+                <RouterLink :to="{ name: 'login' }" class="font-semibold text-indigo-600 hover:text-indigo-800">
+                  Iniciar Sesión <i class="ml-1 fas fa-sign-in-alt"></i>
+                </RouterLink>
               </p>
             </form>
           </div>
@@ -122,7 +149,7 @@ const verifyValues = (): boolean => (!userEmail.value || !password.value || !con
 const auth = getAuth();
 
 const router = useRouter();
-const createUser = async (): Promise<any> => {
+const createUser = async (): Promise<void> => {
   if (!verifyValues()) {
     notyf.error('Por favor verifique los valores ingresados, verifique que no haya faltantes')
     return;
@@ -137,7 +164,7 @@ const createUser = async (): Promise<any> => {
 
     if (credentials.user) {
       const actionCodeSettings = {
-        url: 'https://losestafadores.com/succesfullyRegistered',
+        url: 'http://localhost:5173/successfullyRegistered',
         handleCodeInApp: true,
       };
       await sendEmailVerification(credentials.user, actionCodeSettings);
@@ -159,6 +186,20 @@ const createUser = async (): Promise<any> => {
   }
 }
 
+const avatarColors = [
+  { id: 1, color: '#f4b853' },
+  { id: 2, color: '#998bf1' },
+  { id: 3, color: '#1c144c' },
+  { id: 4, color: '#c7a0ca' },
+  { id: 5, color: '#4b4590' },
+  { id: 6, color: '#3c3c64' },
+];
+
+const selectedColor = ref('');
+
+const selectColor = (color: string) => {
+  selectedColor.value = selectedColor.value === color ? '' : color;
+};
 </script>
 
 <style scoped></style>

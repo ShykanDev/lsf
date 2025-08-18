@@ -10,7 +10,7 @@
                 <i class="text-4xl text-indigo-600 fas fa-user-lock"></i>
               </div>
               <h2 class="text-3xl font-bold text-gray-800">Bienvenido de vuelta</h2>
-              <p class="mt-2 text-gray-600">Ingresa tus credenciales para continuar</p>
+              <p class="mt-2 text-gray-600">Ingrese sus credenciales para continuar</p>
             </div>
 
             <!-- Formulario -->
@@ -64,9 +64,9 @@
               <!-- Registro -->
               <div class="mt-6 text-center">
                 <p class="text-gray-600">
-                  ¿No tienes cuenta?
+                  ¿No tiene cuenta?
                   <RouterLink :to="{ name: 'register' }" class="font-semibold text-indigo-600 hover:text-indigo-800">
-                    Regístrate aquí <i class="ml-1 fas fa-user-plus"></i>
+                    Regístrese aquí <i class="ml-1 fas fa-user-plus"></i>
                   </RouterLink>
                 </p>
               </div>
@@ -145,7 +145,7 @@ const password = ref('');
 const auth = getAuth();
 const signIn = async () => {
   if (!email.value || !password.value) {
-    notyf.error('Por favor ingresa tu correo y contraseña');
+    notyf.error('Por favor ingrese su correo y contraseña');
     return;
   }
   try {

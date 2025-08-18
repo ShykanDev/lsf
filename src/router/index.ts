@@ -80,8 +80,8 @@ const router = createRouter({
       },
     },
     {
-      path: '/succesfullyRegistered',
-      name: 'succesfullyRegistered',
+      path: '/successfullyRegistered',
+      name: 'successfullyRegistered',
       component: () => import('../views/SuccesfullyRegistered.vue'),
       meta: {
         requiresAuth: false,

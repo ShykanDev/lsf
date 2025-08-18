@@ -1,8 +1,8 @@
 <template>
   <!-- Sticky Header -->
   <header ref="header"
-    :class="{ 'bg-indigo-900 border-b-white': !pageScrolled, 'bg-orange-700 border-b-blue-600': pageScrolled }"
-    class="sticky top-0 z-50 text-white border-b-2 transition-all duration-700 ease-in-out">
+    :class="{ 'bg-indigo-900 border-b-white text-white': !pageScrolled, 'bg-white border-b-indigo-600 text-indigo-500': pageScrolled }"
+    class="sticky top-0 z-50 border-b-2 transition-all duration-700 ease-in-out">
     <div class="container px-4 mx-auto">
       <nav class="flex justify-between items-center py-4">
         <!-- Logo -->
@@ -49,6 +49,9 @@
           <RouterLink :to="{ name: 'ayuda' }" class="hover:text-gray-400 animate-fade-up animate-delay-300">
             <i class="mr-2 fas fa-question-circle"></i> Ayuda
           </RouterLink>
+          <button v-if="sysValues().getUserLogged" @click="logout()" class="p-1 bg-indigo-500 rounded-lg transition-colors duration-300 ease-out hover:text-indigo-800 hover:bg-indigo-100 animate-fade-up animate-delay-300" :class="{ 'text-indigo-600 border border-indigo-600 bg-white p-1 rounded-lg': pageScrolled, 'text-indigo-800 bg-white p-1 rounded-lg': !pageScrolled }">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+          </button>
         </div>
       </nav>
     </div>
@@ -57,13 +60,13 @@
   <main class="">
     <!-- cookies request -->
     <div v-if="!sysValues().getCookiesAccepted"
-      class="flex fixed right-0 bottom-0 left-0 z-50 justify-between items-center p-4 text-white bg-sky-800 border-t-2 border-white">
+      class="flex fixed right-0 bottom-0 left-0 z-50 justify-between items-center p-4 text-white bg-indigo-500 border-t-2 border-white">
       <div class="flex items-center">
         <i class="mr-2 text-xl fas fa-cookie"></i>
         <span>Este sitio web utiliza cookies para mejorar la experiencia del usuario.</span>
       </div>
       <button @click="sysValues().setCookiesAccepted(true)"
-        class="px-4 py-2 font-bold text-white bg-indigo-500 rounded hover:bg-indigo-600">
+        class="px-4 py-2 font-bold text-indigo-500 bg-white rounded hover:bg-indigo-800 hover:text-white">
         Aceptar
       </button>
     </div>
@@ -71,70 +74,44 @@
   </main>
 
   <!-- Footer -->
-  <footer class="py-8 text-white border-t-2 border-white"
-    :class="{ 'bg-indigo-500': !pageScrolled, 'bg-orange-500': pageScrolled }">
-    <div class="container mx-auto">
-      <div class="flex flex-wrap justify-between">
-        <!-- Links Section -->
-        <div class="w-full md:w-1/3">
-          <h3 class="mb-4 text-xl font-bold"><i class="mr-2 fas fa-sitemap"></i>Navegación</h3>
-          <ul class="list-none">
-            <li class="mb-2">
-              <RouterLink :to="{ name: 'nosotros' }" class="hover:text-gray-400">
-                <i class="mr-2 fas fa-users"></i> Nosotros
-              </RouterLink>
-            </li>
-            <li class="mb-2">
-              <RouterLink :to="{ name: 'blog' }" class="hover:text-gray-400">
-                <i class="mr-2 fas fa-blog"></i> Blog
-              </RouterLink>
-            </li>
-            <li class="mb-2">
-              <RouterLink :to="{ name: 'ayuda' }" class="hover:text-gray-400">
-                <i class="mr-2 fas fa-question-circle"></i> Ayuda
-              </RouterLink>
-            </li>
-            <li class="mb-2">
-              <RouterLink :to="{ name: 'contacto' }" class="hover:text-gray-400">
-                <i class="mr-2 fas fa-envelope"></i> Contacto
-              </RouterLink>
-            </li>
-            <li class="mb-2">
-              <RouterLink :to="{ name: 'home' }" class="hover:text-gray-400">
-                <i class="mr-2 fas fa-file-contract"></i> Términos y Condiciones
-              </RouterLink>
-            </li>
-          </ul>
-        </div>
-
-        <!-- About Section -->
-        <div class="w-full md:w-1/3">
-          <h3 class="mb-4 text-xl font-bold"><i class="mr-2 fas fa-info-circle"></i>Sobre Nosotros</h3>
-          <p class="mb-4">
-            Un sitio especial para publicar e indagar acerca de los fraudes y estafas. Comente, comparte e indague, las
-            empresas, personas, servicios y/o productos que hacen fraude.
-          </p>
-        </div>
-
-        <!-- Legal Section -->
-        <div class="w-full md:w-1/3">
-          <h3 class="mb-4 text-xl font-bold"><i class="mr-2 fas fa-file-contract"></i>Información Legal</h3>
-          <p class="mb-4">
-            Los comentarios alojados en losestafadores.com son propiedad exclusiva del usuario/usuaria que los crea. Por
-            lo cual, la autoría y manejo del comentario son responsabilidad del propietario del comentario.
-            Losestafadores.com no asume ninguna responsabilidad por los comentarios creados en el sitio.
-          </p>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="pt-4 mt-8 border-t border-gray-50">
-        <p class="text-sm text-center">
-          Todos los derechos reservados losestafadores.com © 2025 Design by JAAC / <small>updated by PACA </small>
-        </p>
-      </div>
+  <footer class="py-4 text-white border-t border-white"
+  :class="{ 'bg-indigo-500': !pageScrolled, 'bg-indigo-900': pageScrolled }">
+  <div class="container mx-auto">
+    <div class="flex flex-wrap justify-center">
+      <!-- Links Section -->
+      <ul class="flex flex-wrap gap-6 text-sm">
+        <li>
+          <RouterLink :to="{ name: 'blog' }" class="hover:text-gray-300">
+            <i class="mr-1 fas fa-blog"></i> Blog
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink :to="{ name: 'ayuda' }" class="hover:text-gray-300">
+            <i class="mr-1 fas fa-question-circle"></i> Ayuda
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink :to="{ name: 'contacto' }" class="hover:text-gray-300">
+            <i class="mr-1 fas fa-envelope"></i> Contacto
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink :to="{ name: 'home' }" class="hover:text-gray-300">
+            <i class="mr-1 fas fa-file-contract"></i> Términos y Condiciones
+          </RouterLink>
+        </li>
+      </ul>
     </div>
-  </footer>
+
+    <!-- Bottom Bar -->
+    <div class="pt-2 mt-4 border-t border-gray-50">
+      <p class="text-xs text-center">
+        © 2025 losestafadores.com — Design by JAAC / <small>updated by PACA</small>
+      </p>
+    </div>
+  </div>
+</footer>
+
 </template>
 
 <script lang="ts" setup>
@@ -142,7 +119,7 @@
 import { sysValues } from '@/stores/sysVals';
 import { uiValues } from '@/stores/uiValues';
 import { onMounted, onUnmounted, ref, computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 
 
@@ -153,7 +130,15 @@ const pageScrolled = computed(() => uiValues().getPageScrolled);
 const changeColorHeader = () => (window.scrollY > uiValues().getMainSectionHeight) ? uiValues().setPageScrolled(true) : uiValues().setPageScrolled(false);
 onMounted(() => window.addEventListener('scroll', changeColorHeader));
 
-const route = useRoute();
+const router = useRouter();
+const logout = () => {
+  sysValues().setUserLogged(false);
+  sysValues().setUserName('');
+  router.push('/');
+  setTimeout(() => {
+    window.location.reload();
+  }, 100);
+};
 </script>
 
 <style scoped></style>

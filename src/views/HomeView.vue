@@ -4,7 +4,7 @@
       <!-- main page -->
       <section>
         <!-- Site Header -->
-        <div id="mainSectionHeader" class="text-white bg-gradient-to-br from-blue-500 to-blue-800 animate-fade">
+        <div id="mainSectionHeader" class="text-indigo-50 bg-gradient-to-r from-indigo-500 to-indigo-900 animate-fade">
           <div class="container px-4 py-10 mx-auto">
             <div class="flex items-start">
               <div class="w-full md:w-1/2 lg:pr-20">
@@ -17,7 +17,7 @@
                   terceros, podrás saber por sus comentarios si una persona, empresa o servicio comete estafa o fraude
                 </p>
                 <div class="flex gap-4 mb-12">
-                  <RouterLink :to="{ name: 'home' }"
+                  <RouterLink :to="{ name: 'login' }"
                     class="px-8 py-3 rounded-full border-2 border-white backdrop-blur-sm transition-all bg-white/10 hover:bg-white/20 animate-fade-up animate-delay-500">
                     <i class="mr-2 fas fa-door-open"></i>Acceder
                   </RouterLink>
@@ -38,7 +38,7 @@
               </div>
               <div class="flex-1 rounded-3xl bg-zinc-700">
                 <img class="rounded-3xl"
-                  src="https://images.pexels.com/photos/6353683/pexels-photo-6353683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg"
                   alt="">
               </div>
             </div>
@@ -64,7 +64,7 @@
         <div class="flex justify-center">
           <div class="my-8 border-b border-gray-300"></div>
           <div class="container">
-            <div class="flex p-2 py-6 mt-4 bg-rose-700 rounded-xl">
+            <div class="flex p-2 py-6 mt-4 bg-indigo-700 rounded-xl">
               <div class="flex flex-col gap-2 items-center w-1/2">
                 <h2 class="text-2xl font-bold text-white">¿Qué es losestafadores.com?</h2>
                 <p class="text-white">Es un sitio web, de registro gratuito, el cual almacena las experiencias de
@@ -110,7 +110,7 @@
         </div>
 
         <!-- Acciones -->
-        <div class="container flex">
+        <div class="flex justify-center">
           <div class="my-8 border-b border-gray-300"></div>
           <div class="text-center">
             <strong>
@@ -137,8 +137,8 @@
                 </RouterLink>
               </div>
               <div class="flex flex-col items-center space-y-5 w-1/4">
-                <h2 class="text-xl font-bold text-gray-800">Filtro de búsqueda avanzado</h2>
-                <i class="text-5xl text-orange-600 fas fa-search"></i>
+                <h2 class="text-xl font-bold text-gray-800">Filtro de búsqueda</h2>
+                <i class="text-5xl text-indigo-600 fas fa-search"></i>
                 <br>
                 <RouterLink :to="{ name: 'blog' }"
                   class="hidden px-6 py-2 mt-4 text-white bg-sky-800 rounded-lg shadow">
@@ -158,16 +158,16 @@
         </div>
 
         <!-- Fondo Woman Circles -->
-        <div class="bg-[#f0f0f0]">
+        <div class="bg-[#f0f0f0] flex justify-around">
           <div class="my-8 border-b border-gray-300"></div>
           <div class="container py-8 text-center">
             <div class="flex">
               <div class="w-1/2">
-                <h2 class="text-2xl font-bold text-orange-600">Conozca los estafadores</h2>
+                <h2 class="text-2xl font-bold text-indigo-600">Conozca los estafadores</h2>
                 <p class="text-gray-600">Con ayuda de los comentarios, indague quienes son los estafadores y evite
                   problemas futuros en sus negocios</p>
                 <div class="mt-4 text-center">
-                  <RouterLink :to="{ name: 'blog' }" class="px-6 py-2 text-white bg-orange-600 rounded-lg shadow">
+                  <RouterLink :to="{ name: 'blog' }" class="px-6 py-2 text-white bg-indigo-600 rounded-lg shadow">
                     <i class="fas fa-book-open"></i> Blog
                   </RouterLink>
                 </div>
@@ -204,26 +204,28 @@
 
         <!-- Diferentes tipos de Estafas y Fraudes -->
         <div class="my-8 border-b border-gray-300"></div>
-        <div class="container p-5 mx-auto text-center bg-orange-500 rounded-2xl">
+        <div class="flex flex-col justify-center items-center p-5 text-center bg-indigo-500 rounded-2xl">
           <h2 class="text-2xl font-bold text-gray-100">Diferentes tipos de Estafas y Fraudes</h2>
           <p class="font-semibold text-white">Existen muchas formas en las cuales operan las personas que quieren
             realizar un abuso de confianza, haciendo estafas y/o fraudes. Te mostraremos algunas de ellas, las cuales
             son las más comunes y aparecen en los comentarios</p>
           <div class="flex mt-8">
-            <div class="hidden w-2/5">
+            <div class="hidden w-5/5">
               <!-- <h2 class="text-2xl font-bold text-gray-800">Conozca los diferentes tipos de estafas</h2> -->
               <!-- <img src="../assets/img/woman-cash2.png" alt="Mujer con dinero" class="w-full h-auto"> -->
             </div>
             <div class="">
               <!-- Sección de Tipos de Estafas -->
-              <section class="py-20 bg-gray-50 rounded-xl">
-                <div class="container px-4 mx-auto">
+              <section class="py-20 w-full bg-indigo-50 rounded-xl">
+                <div class="px-4 mx-auto">
                   <!-- Título y Descripción -->
                   <div class="mx-auto mb-16 max-w-2xl text-center">
-                    <h2 class="mb-6 text-4xl font-bold">
+                    <h2 class="mb-6 text-4xl font-bold text-indigo-900">
                       <i class="mr-3 text-yellow-500 fas fa-exclamation-triangle"></i>
                       Diferentes tipos de Estafas y Fraudes
+                      <i class="text-yellow-500 fas fa-exclamation-triangle"></i>
                     </h2>
+
                     <p class="text-gray-600">
                       Existen muchas formas en las cuales operan las personas que quieren realizar un abuso de
                       confianza, haciendo estafas y/o fraudes. Te mostraremos algunas de ellas, las cuales son las más
@@ -235,7 +237,7 @@
                   <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     <!-- Tarjeta Hipotecario -->
                     <div
-                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      class="overflow-hidden bg-white rounded-2xl border border-indigo-400 shadow-lg transition-shadow hover:shadow-xl">
                       <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/mortgage.jpg" alt="Hipotecario" class="object-cover w-full h-full">
                       </div>
@@ -254,7 +256,7 @@
 
                     <!-- Tarjeta Compras por Internet -->
                     <div
-                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      class="overflow-hidden bg-white rounded-2xl border border-indigo-400 shadow-lg transition-shadow hover:shadow-xl">
                       <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/internet_shopping.jpg" alt="Compras por Internet"
                           class="object-cover w-full h-full">
@@ -274,7 +276,7 @@
 
                     <!-- Tarjeta Servicios -->
                     <div
-                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      class="overflow-hidden bg-white rounded-2xl border border-indigo-400 shadow-lg transition-shadow hover:shadow-xl">
                       <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/fake_ads.jpg" alt="Servicios" class="object-cover w-full h-full">
                       </div>
@@ -294,7 +296,7 @@
 
                     <!-- Tarjeta Productos -->
                     <div
-                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      class="overflow-hidden bg-white rounded-2xl border border-indigo-400 shadow-lg transition-shadow hover:shadow-xl">
                       <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/products.jpg" alt="Productos" class="object-cover w-full h-full">
                       </div>
@@ -315,7 +317,7 @@
 
                     <!-- Tarjeta Bancarios o Prestamistas -->
                     <div
-                      class="overflow-hidden bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      class="overflow-hidden bg-white rounded-2xl border border-indigo-400 shadow-lg transition-shadow hover:shadow-xl">
                       <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/banking.jpg" alt="Bancarios o Prestamistas"
                           class="object-cover w-full h-full">
@@ -336,7 +338,7 @@
 
                     <!-- Tarjeta Trabajos -->
                     <div
-                      class="overflow-hidden pb-4 bg-white rounded-2xl border border-orange-400 shadow-lg transition-shadow hover:shadow-xl">
+                      class="overflow-hidden pb-4 bg-white rounded-2xl border border-indigo-400 shadow-lg transition-shadow hover:shadow-xl">
                       <div class="flex justify-center items-center h-48 bg-gray-200">
                         <img src="../assets/img/working.jpg" alt="Trabajos" class="object-cover w-full h-full">
                       </div>
@@ -353,7 +355,7 @@
                         </p>
                       </div>
                       <RouterLink :to="{ name: 'blog' }"
-                        class="px-6 py-2 mb-3 text-white bg-orange-500 rounded-lg shadow">
+                        class="px-6 py-2 mb-3 text-white bg-indigo-500 rounded-lg shadow">
                         Ver mas..
                       </RouterLink>
                     </div>
@@ -367,12 +369,12 @@
         <!-- Fondo Saludo -->
         <div class="my-8 border-b border-gray-300"></div>
         <div class="container text-center">
-          <h2 class="text-2xl font-bold text-orange-600"><span>Comencemos con el registro para poder utilizar todas las
+          <h2 class="text-2xl font-bold text-indigo-600"><span>Comencemos con el registro para poder utilizar todas las
               funciones</span></h2>
           <p class="text-gray-600">Al realizar el registro e iniciar sesión podrás <strong>Comentar, Visualizar,
               Responder y descubrir los fraudes y estafas por experiencia de otros</strong></p>
           <div class="mt-4 text-center">
-            <RouterLink :to="{ name: 'register' }" class="px-6 py-2 text-white bg-orange-500 rounded-lg shadow">
+            <RouterLink :to="{ name: 'register' }" class="px-6 py-2 text-white bg-indigo-500 rounded-lg shadow">
               <i class="fas fa-user-plus"></i> Nuevo registro
             </RouterLink>
           </div>
