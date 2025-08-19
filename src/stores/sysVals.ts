@@ -5,11 +5,15 @@ export const sysValues = defineStore('sysVals', {
     userLogged: false,
     cookiesAccepted: false,
     userName: '',
+    userColor: '',
+    userUid: '',
   }),
   getters: {
     getUserLogged: (state) => state.userLogged,
     getCookiesAccepted: (state) => state.cookiesAccepted,
     getUserName: (state) => state.userName,
+    getUserColor: (state) => state.userColor,
+    getUserUid: (state) => state.userUid,
   },
   actions: {
     setUserLogged(value: boolean) {
@@ -20,6 +24,12 @@ export const sysValues = defineStore('sysVals', {
     },
     setUserName(value: string) {
       this.userName = value
+    },
+    setUserColor(value: string) {
+      this.userColor = value
+    },
+    setUserUid(value: string) {
+      this.userUid = value
     },
   },
   persist:true

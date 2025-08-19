@@ -143,7 +143,7 @@ const password = ref('');
 const confirmPassword = ref('');
 
 // verifying that user values are valid
-const verifyValues = (): boolean => (!userEmail.value || !password.value || !confirmPassword.value || !userName.value || password.value !== confirmPassword.value) ? false : true;
+const verifyValues = (): boolean => (!userEmail.value || !password.value || !confirmPassword.value || !userName.value || !selectedColor.value || password.value !== confirmPassword.value) ? false : true;
 
 // values to login the user trough firebase
 const auth = getAuth();
@@ -159,6 +159,7 @@ const createUser = async (): Promise<void> => {
     const credentials = await createUserWithEmailAndPassword(auth, userEmail.value, password.value);
     updateProfile(credentials.user, {
       displayName: userName.value,
+      photoURL: selectedColor.value,
     })
 
 

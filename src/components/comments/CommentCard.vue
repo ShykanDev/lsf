@@ -6,13 +6,13 @@
 
       <article
         class="flex justify-center items-center w-8 h-8 rounded-full text-slate-100"
-        :style="{ backgroundColor: randomColor() }"
+        :style="{ backgroundColor:  userColor }"
       >
         <h5 class="text-sm font-semibold">{{ userName.charAt(0).toUpperCase() }}</h5>
       </article>
       <div>
         <h3 class="text-sm font-medium text-gray-800">{{ userName }}</h3>
-        <h4 class="text-xs text-gray-500">{{ convertedDate(creationDate) }}</h4>
+        <h4 class="text-xs text-gray-500">{{ convertedDate(creationDate)  }}</h4>
       </div>
     </div>
 
@@ -69,7 +69,7 @@
       </div>
       <div>
         <span class="block font-medium text-gray-700">Fecha</span>
-        <span class="text-gray-800">{{ dateScam }}</span>
+        <span class="text-gray-800">{{ convertedDate(dateScam) }}</span>
       </div>
     </div>
 
@@ -195,7 +195,7 @@
           <div class="flex gap-3 items-center mb-3">
             <article
               class="flex justify-center items-center w-8 h-8 rounded-full text-slate-100"
-              :style="{ backgroundColor: randomColor() }"
+              :style="{ backgroundColor: answer.answerUserColor }"
             >
               <h5 class="text-sm font-semibold">{{ answer.answerName.charAt(0).toUpperCase() }}</h5>
             </article>
@@ -207,8 +207,8 @@
           <p class="pl-9 text-sm text-gray-700">{{ answer.answerComment }}</p>
         </div>
       </TransitionGroup>
-      <div v-if="!limitReached && answers.length > answersLimit" class="flex justify-center items-center my-1">
-        <button @click="loadMoreMessages()" class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg font-redHat hover:bg-indigo-700">
+      <div v-if="!limitReached && answers.length > answersLimit" class="flex justify-start items-center p-3 my-1">
+        <button @click="loadMoreMessages()" class="px-4 py-2 text-sm font-medium text-white bg-indigo-500 rounded-lg font-redHat hover:bg-indigo-700">
           Ver más respuestas
         </button>
       </div>
@@ -218,7 +218,7 @@
 
 <script lang="ts" setup>
 import { sysValues } from '@/stores/sysVals';
-import { arrayUnion, doc, getFirestore, limit, Timestamp, updateDoc } from 'firebase/firestore';
+import { arrayUnion, doc, getFirestore, Timestamp, updateDoc } from 'firebase/firestore';
 import { nextTick, ref, computed, type PropType } from 'vue';
 import "notyf/notyf.min.css";
 import { Notyf } from "notyf";
@@ -240,6 +240,8 @@ interface Answer {
   answerName: string;
   answerComment: string;
   answerCreationDate: Timestamp;
+  answerUserColor: string;
+  answerUserUid: string;
 }
 
 const props = defineProps({
@@ -294,7 +296,11 @@ const props = defineProps({
   fullComment: {
     type: Boolean,
     default: false
-  }
+  },
+  userColor: {
+    type: String,
+    default: '#f4b853'
+  },
 });
 
 const scamTypeLabel = computed(() => {
@@ -344,6 +350,9 @@ const addAnswer = async () => {
         answerName: sysValues().getUserName,
         answerComment: answerValue.value,
         answerCreationDate: Timestamp.now(),
+        answerUserColor: sysValues().getUserColor,
+        answerUserUid: sysValues().getUserUid,
+
       })
     });
     callGetAnswers();

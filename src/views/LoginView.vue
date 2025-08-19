@@ -123,6 +123,7 @@ import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css'; // for React, Vue and Svelte
 import { sysValues } from '@/stores/sysVals';
 import { useRouter } from 'vue-router';
+import { sys } from 'typescript';
 
 // router
 const router = useRouter();
@@ -155,12 +156,17 @@ const signIn = async () => {
       sysValues().setUserLogged(false);
       return;
     } else {
-      if (credentials.user.displayName) {
+      if (credentials.user.displayName && credentials.user.photoURL) {
+        sysValues().setUserUid(credentials.user.uid);
         sysValues().setUserName(credentials.user.displayName);
         notyf.success('Bienvenido nuevamente ' + credentials.user.displayName);
         sysValues().setUserLogged(true);
+        sysValues().setUserColor(credentials.user.photoURL);
+        console.log(sysValues().getUserColor);
         router.push({ name: 'blog' });
+
       }
+
     }
   } catch (error) {
     console.log(error);
