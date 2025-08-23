@@ -74,7 +74,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="py-4 text-white border-t border-white"
+  <footer class="hidden py-4 text-white border-t border-white"
   :class="{ 'bg-indigo-500': !pageScrolled, 'bg-indigo-900': pageScrolled }">
   <div class="container mx-auto">
     <div class="flex flex-wrap justify-center">

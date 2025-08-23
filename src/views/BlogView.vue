@@ -10,26 +10,21 @@
   mode="out-in"
 >
   <aside
-    class="flex justify-around items-center px-4 py-1 w-full transition-all duration-300 ease-in-out"
-    :class="{
-      'bg-gradient-to-br from-indigo-950 to-indigo-900 shadow-xl': !pageScrolled,
-      'bg-indigo-800/90 backdrop-blur-sm shadow-lg': pageScrolled
-    }"
+    class="flex justify-around items-center px-4 py-1 w-full bg-indigo-200 transition-all duration-300 ease-in-out"
+
   >
     <!-- Logo o icono principal (opcional) -->
     <div class="flex-shrink-0 mb-6 md:mb-10">
-      <i class="text-3xl text-white fas fa-shield-alt"></i>
+      <i class="text-3xl text-indigo-600 fas fa-shield-alt"></i>
     </div>
 
     <!-- Menú de navegación -->
     <nav class="flex gap-4 justify-between w-full">
       <button
         @click="setCurrentComponent(CommentsComponent)"
-        class="flex gap-3 items-center px-4 py-3 text-white rounded-xl transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-indigo-900"
-        :class="{
-          'bg-white/10 shadow-sm': !pageScrolled,
-          'bg-white/5 hover:bg-white/20': pageScrolled
-        }"
+        :class="{'ring-2 ring-indigo-600': currentComponent.value === CommentsComponent}"
+        class="flex gap-3 items-center px-4 py-3 text-white bg-indigo-400 rounded-xl transition-all duration-500 hover:bg-indigo-500"
+
       >
         <i class="text-lg fas fa-comments"></i>
         <span class="hidden font-medium text-white md:inline">
@@ -39,11 +34,9 @@
 
       <button
         @click="setCurrentComponent(HistoryComponent)"
-        class="flex gap-3 items-center px-4 py-3 text-white rounded-xl transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-indigo-900"
-        :class="{
-          'bg-white/10 shadow-sm': !pageScrolled,
-          'bg-white/5 hover:bg-white/20': pageScrolled
-        }"
+        :class="{'ring-2 ring-indigo-6  00': currentComponent.value === HistoryComponent}"
+        class="flex gap-3 items-center px-4 py-3 text-white bg-indigo-400 rounded-xl transition-all duration-500 hover:bg-indigo-500"
+
       >
         <i class="text-lg fa fa-book"></i>
         <span class="hidden font-medium text-white md:inline">
@@ -53,39 +46,44 @@
 
       <button
         @click="setCurrentComponent(ScamersTypesComponent)"
-        class="flex gap-3 items-center px-4 py-3 text-white rounded-xl transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-indigo-900"
-        :class="{
-          'bg-white/10 shadow-sm': !pageScrolled,
-          'bg-white/5 hover:bg-white/20': pageScrolled
-        }"
+        :class="{'ring-2 ring-indigo-600': currentComponent.value === ScamersTypesComponent}"
+        class="flex gap-3 items-center px-4 py-3 text-white bg-indigo-400 rounded-xl transition-all duration-500 hover:bg-indigo-500"
       >
         <i class="text-lg fa fa-users"></i>
         <span class="hidden font-medium text-white md:inline">
-          Tipos de estafadores
+          Medidas de seguridad
         </span>
       </button>
 
       <button
         @click="setCurrentComponent(CommonCasesComponent)"
-        class="flex gap-3 items-center px-4 py-3 text-white rounded-xl transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-indigo-900"
-        :class="{
-          'bg-white/10 shadow-sm': !pageScrolled,
-          'bg-white/5 hover:bg-white/20': pageScrolled
-        }"
+        :class="{'ring-2 ring-indigo-600': currentComponent.value === CommonCasesComponent    }"
+        class="flex gap-3 items-center px-4 py-3 text-white bg-indigo-400 rounded-xl transition-all duration-500 hover:bg-indigo-500"
+
       >
         <i class="text-lg fa fa-bug"></i>
+        <span class="font-medium text-white md:inline">
+          Tipos de estafas
+        </span>
+      </button>
+      <button
+        @click="setCurrentComponent(SecurityMeasuresComponent)"
+        :class="{'ring-2 ring-indigo-600': currentComponent.value === CommonCasesComponent}"
+        class="flex gap-3 items-center px-4 py-3 text-white bg-indigo-400 rounded-xl transition-all duration-500 hover:bg-indigo-500"
+
+      >
+      <!--Icon related to scams that is not fa shield alt or fa users-->
+        <i class="text-lg fas fa-balance-scale"></i>
         <span class="hidden font-medium text-white md:inline">
-          Casos Comunes
+          Estafas comunes
         </span>
       </button>
 
       <button
         @click="setCurrentComponent(AvoidScamComponent)"
-        class="flex gap-3 items-center px-4 py-3 text-white rounded-xl transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-indigo-900"
-        :class="{
-          'bg-white/10 shadow-sm': !pageScrolled,
-          'bg-white/5 hover:bg-white/20': pageScrolled
-        }"
+        :class="{'ring-2 ring-indigo-600': currentComponent.value === AvoidScamComponent}"
+        class="flex gap-3 items-center px-4 py-3 text-white bg-indigo-400 rounded-xl transition-all duration-500 hover:bg-indigo-500"
+
       >
         <i class="text-lg fa fa-shield-alt"></i>
         <span class="hidden font-medium text-white md:inline">
@@ -127,6 +125,7 @@ const ScamersTypesComponent = defineAsyncComponent(() => import('../components/a
 const CommonCasesComponent = defineAsyncComponent(() => import('../components/async/CommonCasesComponent.vue'))
 const AvoidScamComponent = defineAsyncComponent(() => import('../components/async/AvoidScamComponent.vue'))
 const CommentsComponent = defineAsyncComponent(() => import('../components/async/CommentsComponent.vue'))
+const SecurityMeasuresComponent = defineAsyncComponent(() => import('../components/async/SecurityMeasuresComponent.vue'))
 
 // component that'll change on user actions (when user clicks on a aside button)
 const currentComponent = shallowRef(HistoryComponent);

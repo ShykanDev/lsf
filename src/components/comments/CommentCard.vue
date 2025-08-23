@@ -1,9 +1,9 @@
 <template>
   <!-- comment card (MAIN) -->
-  <section class="p-4 w-full bg-white rounded-2xl border border-gray-100 shadow-sm transition-shadow duration-200 font-poppins hover:shadow-md">
+  <section class="p-4 w-full rounded-2xl border border-gray-100 shadow-sm transition-shadow duration-200 font-poppins hover:shadow-md">
     <!-- Header del comentario -->
     <div class="flex gap-3 items-center mb-4">
-
+      <v-icon name="fa-user" scale="1" class="mt-0.5 text-indigo-600" />
       <article
         class="flex justify-center items-center w-8 h-8 rounded-full text-slate-100"
         :style="{ backgroundColor:  userColor }"
@@ -89,7 +89,10 @@
 
     <!-- Contenido del comentario -->
     <div class="space-y-3">
-      <h3 class="text-lg italic font-semibold text-indigo-800 font-redHat">"{{ subject }}"</h3>
+      <article class="flex justify-between items-center">
+        <h3 class="text-lg italic font-semibold text-indigo-800 font-redHat">"{{ subject }}"</h3>
+        <button @click="reportComment"><v-icon name="io-flag" scale="1" class="mt-0.5 text-rose-600" /></button>
+      </article>
       <p class="text-sm leading-relaxed text-gray-700">{{ comment }}</p>
     </div>
 
@@ -186,6 +189,7 @@
 
     <!-- Respuestas -->
     <article class="bg-white">
+
       <TransitionGroup name="list" tag="div" class="answers-container">
         <div
           v-for="answer in visibleAnswers.sort((a, b) => Number(a.answerCreationDate) - Number(b.answerCreationDate))"
@@ -222,6 +226,7 @@ import { arrayUnion, doc, getFirestore, Timestamp, updateDoc } from 'firebase/fi
 import { nextTick, ref, computed, type PropType } from 'vue';
 import "notyf/notyf.min.css";
 import { Notyf } from "notyf";
+import { reports } from '@/stores/reports';
 
 const notyf = new Notyf({
   duration: 3000,
@@ -242,6 +247,7 @@ interface Answer {
   answerCreationDate: Timestamp;
   answerUserColor: string;
   answerUserUid: string;
+
 }
 
 const props = defineProps({
@@ -301,6 +307,10 @@ const props = defineProps({
     type: String,
     default: '#f4b853'
   },
+  userUid: {
+    type: String,
+    default: ''
+  }
 });
 
 const scamTypeLabel = computed(() => {
@@ -314,7 +324,7 @@ const scamTypeLabel = computed(() => {
   return types[props.scamType] || props.scamType;
 });
 
-const emmits = defineEmits(['getAnswers']);
+const emmits = defineEmits(['getAnswers', 'report', 'getReportCommentData'  ]);
 const db = getFirestore();
 const commentDocReference = doc(db, `usersComments/${props.cardId}`);
 const answerValue = ref('');
@@ -362,7 +372,13 @@ const addAnswer = async () => {
   }
 };
 
-const convertedDate = (dateParam: Timestamp) => dateParam.toDate().toLocaleString('es-ES', { hour12: true, hour: '2-digit', minute: '2-digit', day: '2-digit', month: 'long', year: 'numeric', weekday: 'long' });
+const convertedDate = (dateParam: Timestamp) => {
+  if (!dateParam) return '';
+  if (typeof dateParam === 'object' && dateParam.toDate) {
+    return dateParam.toDate().toLocaleString('es-ES', { hour12: true, hour: '2-digit', minute: '2-digit', day: '2-digit', month: 'long', year: 'numeric', weekday: 'long' });
+  }
+  return dateParam;
+}
 
 const defaultAnswerValue = ref(1);
 const $answerTextArea = ref<HTMLElement | null>(null);
@@ -414,6 +430,18 @@ const randomColor = () => {
   return colors[Math.floor(Math.random() * colors.length)];
 
 };
+
+
+const reportComment = () => {
+  reports().setReportCommentData({
+    messageReported: props.comment,
+    userReportedName: props.userName,
+    dateReported: props.creationDate,
+    userId: props.userUid
+  })
+  emmits('report');
+}
+
 </script>
 
 <style scoped>

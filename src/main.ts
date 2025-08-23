@@ -37,6 +37,12 @@ import { FaFlag, RiZhihuFill,PrComments,FaPenAlt,IoChatbubbleEllipsesOutline,BiR
   FaCalendarAlt,
   FaDollarSign,
   FaPhoneAlt,
+  RiRefreshLine,
+  RiDeleteBack2Line,
+  IoSearchSharp,
+  PrSortNumericDown,
+  PrSortNumericUp,
+  IoFlag
  } from "oh-vue-icons/icons";
 
 addIcons(FaFlag, RiZhihuFill,PrComments,FaPenAlt,IoChatbubbleEllipsesOutline,BiReplyFill, BiReplyAll,RiLoader5Line,BiSkipEndFill,
@@ -47,6 +53,12 @@ addIcons(FaFlag, RiZhihuFill,PrComments,FaPenAlt,IoChatbubbleEllipsesOutline,BiR
   FaCalendarAlt,
   FaDollarSign,
   FaPhoneAlt,
+  RiRefreshLine,
+  RiDeleteBack2Line,
+  IoSearchSharp,
+  PrSortNumericDown,
+  PrSortNumericUp,
+  IoFlag
 );
 
 import AOS from 'aos';
