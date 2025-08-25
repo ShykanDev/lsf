@@ -42,7 +42,8 @@ import { FaFlag, RiZhihuFill,PrComments,FaPenAlt,IoChatbubbleEllipsesOutline,BiR
   IoSearchSharp,
   PrSortNumericDown,
   PrSortNumericUp,
-  IoFlag
+  IoFlag,
+  MdCheckcircleTwotone
  } from "oh-vue-icons/icons";
 
 addIcons(FaFlag, RiZhihuFill,PrComments,FaPenAlt,IoChatbubbleEllipsesOutline,BiReplyFill, BiReplyAll,RiLoader5Line,BiSkipEndFill,
@@ -58,7 +59,8 @@ addIcons(FaFlag, RiZhihuFill,PrComments,FaPenAlt,IoChatbubbleEllipsesOutline,BiR
   IoSearchSharp,
   PrSortNumericDown,
   PrSortNumericUp,
-  IoFlag
+  IoFlag,
+  MdCheckcircleTwotone
 );
 
 import AOS from 'aos';

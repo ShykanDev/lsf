@@ -730,7 +730,7 @@ const uploadMockComment = async () => {
   }
 }
 
-const uniqueServices = computed(() => [...new Set(comments.value.map((comment) => comment.serviceName))])
+const uniqueServices = computed(() => [...new Set( comments.value.map((comment) => comment.serviceName ).filter((comment) => comment.toLowerCase() != '') )])
 
 const setFilter = (filterParam: string) => filter.value = filterParam;
 

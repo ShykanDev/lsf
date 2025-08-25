@@ -1,6 +1,6 @@
 <template>
-  <div class="flex fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50">
-      <div v-show="!loading" class="p-4 max-w-sm bg-white rounded-lg shadow-lg animate-jump">
+  <div  class="flex fixed inset-0 z-40 justify-center items-center bg-black bg-opacity-50">
+      <div v-show="!loading && !isError" class="p-4 max-w-sm bg-white rounded-lg shadow-lg animate-jump">
           <h2 class="mb-2 text-lg font-semibold">Reportar comentario</h2>
 
           <!-- Disclaimer -->
@@ -21,26 +21,49 @@
               </button>
           </div>
       </div>
-      <div v-show="loading" class="p-4 max-w-sm bg-white rounded-lg shadow-lg animate-jump">
-        <v-icon name="ri-loader-5-line" scale="1.2" class="absolute top-1 right-1 text-rose-600"  animation="spin" speed="fast" />
-        <article class="flex relative flex-col gap-2 items-start">
-            <h2 class="mb-2 text-lg font-medium text-rose-800 font-redHat">Reportando comentario...</h2>
+      <div v-show="loading && !isError" class="p-4 max-w-sm bg-white rounded-lg shadow-lg animate-jump">
+        <v-icon v-if="!showTick" name="ri-loader-5-line" scale="1.2" class="absolute top-1 right-1 text-rose-600"  animation="spin" speed="fast" />
+        <v-icon v-else name="md-checkcircle-twotone" scale="1" class="absolute top-1 right-1 mt-0.5 text-emerald-600 animate__animated animate__flip" />
+        <article class="flex relative flex-col gap-2 items-start font-nunito">
+            <h2 v-if="!showTick" class="mb-2 text-lg font-medium text-rose-800 font-nunito">Reportando comentario...</h2>
+            <p v-else class="text-base text-emerald-600 animate-fade-left animate__animated animate__zoomInRight">Comentario reportado exitosamente</p>
             <p class="text-sm text-gray-600">Esto puede tomar unos momentos</p>
-            <p class="text-sm text-gray-600 animate-fade-left animate-delay-[700ms]">Obteniendo el usuario</p>
-            <p class="text-sm text-gray-600 animate-fade-left animate-delay-[1400ms]">Reportando el comentario</p>
-            <p class="text-sm text-gray-600 animate-fade-left animate-delay-[2100ms]">Listo</p>
-            <p>{{ reports().getReportCommentData }}</p>
+            <p class="text-sm text-gray-600 animate-fade-left font-nunito animate-delay-[700ms]">Usuario: <span class="font-bold text-rose-800 font-poppins">{{ reports().getReportCommentData.userReportedName }}</span></p>
+            <p class="text-sm text-gray-600 animate-fade-left animate-delay-[1400ms] overflow-hidden whitespace-nowrap w-full truncate font-nunito">Comentario: <span class="font-semibold text-rose-800 font-poppins">{{ reports().getReportCommentData.messageReported }}</span></p>
           </article>
       </div>
+      <section
+  v-if="isError"
+  class="flex fixed inset-0 z-50 justify-center items-center bg-black bg-opacity-50"
+>
+  <div class="p-4 max-w-sm bg-white rounded-lg shadow-lg animate__animated animate__shakeX">
+    <div class="flex gap-2 items-center mb-2 text-rose-600">
+      <v-icon name="ri-error-warning-line" scale="1.2" />
+      <h2 class="text-lg font-semibold">¡Error al reportar!</h2>
+    </div>
+    <p class="mb-3 text-sm text-gray-600">
+      Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde.
+    </p>
+    <div class="flex justify-end">
+      <button
+        @click="closeModal"
+        class="px-4 py-2 text-sm font-medium text-white bg-rose-500 rounded-lg hover:bg-rose-600"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+</section>
 
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import LoaderPink from '../animations/LoaderPink.vue';
-import { Timestamp } from 'firebase/firestore';
+import 'animate.css';
+import { collection, getFirestore, Timestamp, addDoc } from 'firebase/firestore';
 import { reports } from '@/stores/reports';
+const isError = ref(false);
 
 const emit = defineEmits(['close', 'report', 'loading']);
 const loading = ref(false);
@@ -53,6 +76,7 @@ const closeModal = () => {
 
 const startReport = () => {
   loading.value = true;
+  uploadReport()
 }
 
 const props = defineProps({
@@ -73,6 +97,58 @@ const props = defineProps({
     required:true
   }
 })
+
+const autoClose = () => {
+  setTimeout(() => {
+    loading.value = false;
+    emit('close');
+  }, 4000);
+}
+
+// Firebase stuff
+const db = getFirestore();
+const reportsCollection = collection(db, 'reports');
+
+const commentSent = ref(false);
+const showTick = ref(false);
+const setCheck = () => {
+  if(commentSent.value){
+    setTimeout(() => {
+      showTick.value = true;
+      autoClose();
+    }, 4000);
+  }
+}
+
+const autoSetError = () => {
+  setTimeout(() => {
+    if(!commentSent.value){
+      isError.value = true;
+      autoClose();
+    }
+  }, 12000)
+}
+const uploadReport = async() => {
+  autoSetError();
+  try {
+    await addDoc(reportsCollection, {
+      userId: props.userId,
+      messageReported: props.messageReported,
+      userReportedName: props.userReportedName,
+      dateReported: props.dateReported,
+      creationDate: Timestamp.now(),
+    });
+  commentSent.value = true;
+
+    setCheck();
+
+  } catch (error) {
+    console.log(error);
+    isError.value = true;
+    commentSent.value = false;
+  }
+}
+
 </script>
 
 <style scoped>

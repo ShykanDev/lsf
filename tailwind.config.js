@@ -11,6 +11,7 @@ export default {
 	  fontFamily: {
 		poppins: ['Poppins', 'sans-serif'],
     redHat: ['Red Hat Display', 'sans-serif'],
+    nunito: ['Nunito', 'sans-serif'],
 	  },
 	},
   },
